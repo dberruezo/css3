@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+span {
+  position: absolute; }
+
+.grass {
+  background-color: #B5E1AF;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  z-index: 1; }
+
+.wrap {
+  margin-left: -200px;
+  margin-top: 100px; }
+
+.base {
+  background-color: #4B1472;
+  width: 120px;
+  height: 5px;
+  z-index: 2;
+  border-radius: 5px;
+  transform: translatey(25px) translatex(40px); }
+
+.windm_base {
+  background-color: #B783BF;
+  width: 60px;
+  height: 100px;
+  z-index: 1;
+  transform: translatey(-70px) translatex(66px); }
+  .windm_base:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 10px;
+    border-color: transparent transparent #B783BF transparent;
+    z-index: 2;
+    transform: translatex(-10px); }
+  .windm_base:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 0 0 20px;
+    border-color: transparent transparent transparent #B783BF;
+    z-index: 2;
+    transform: translatex(60px); }
+
+.door {
+  background-color: #6e2d90;
+  width: 40px;
+  height: 30px;
+  z-index: 3;
+  border-left: 5px solid #4B1472;
+  border-right: 5px solid #4B1472;
+  transform: translatex(80px) translatey(0px); }
+
+.door_circle {
+  background-color: #6e2d90;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  border-radius: 50%;
+  border: 5px solid #4B1472;
+  transform: translatex(80px) translatey(-20px); }
+
+.divisor {
+  position: absolute;
+  background-color: #FF9CCE;
+  z-index: 3;
+  width: 55px;
+  height: 20px;
+  border-top: 5px solid #4B1472;
+  border-bottom: 5px solid #4B1472;
+  transform: translatey(-70px) translatex(70px);
+  box-shadow: 0 3px 5px #591888; }
+
+.top_base {
+  width: 50px;
+  height: 40px;
+  background-color: #B783BF;
+  z-index: 2;
+  transform: translatey(-107px) translatex(72px); }
+  .top_base:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 40px 5px;
+    border-color: transparent transparent #B783BF transparent;
+    z-index: 2;
+    transform: translatex(-5px); }
+  .top_base:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 0 0 5px;
+    border-color: transparent transparent transparent #B783BF;
+    z-index: 2;
+    transform: translatex(50px); }
+
+.top {
+  width: 36px;
+  height: 36px;
+  background-color: #B783BF;
+  border: 5px solid #4B1472;
+  z-index: 1;
+  transform: translatey(-125px) translatex(79px) rotate(45deg); }
+
+.line_left {
+  background-color: #4B1472;
+  width: 6px;
+  height: 135px;
+  z-index: 3;
+  transform: translatey(-108px) translatex(64px) rotate(7deg); }
+
+.line_right {
+  background-color: #4B1472;
+  width: 6px;
+  height: 135px;
+  z-index: 3;
+  transform: translatey(-109px) translatex(127px) rotate(-10deg); }
+
+.circle {
+  background-color: #FF9CCE;
+  width: 20px;
+  height: 20px;
+  border: 4px solid #4B1472;
+  border-radius: 50%;
+  z-index: 4;
+  transform: translatex(88px) translatey(-100px); }
+
+.mill {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  z-index: 3;
+  margin-top: -90px;
+  margin-left: 98px;
+  transform: translatey(-450px) translatex(95px);
+  transform-origin: 0 0;
+  animation: windmill 3s infinite linear; }
+  .mill span {
+    width: 5px;
+    height: 110px;
+    background-color: #4B1472; }
+    .mill span:before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 60px;
+      background-color: #faefdb;
+      border: 5px solid #4B1472;
+      margin-top: 50px; }
+  .mill span:first-of-type {
+    transform: rotate(45deg) translatey(190px); }
+  .mill span:nth-of-type(2) {
+    transform: rotate(-45deg) translatey(60px) translatex(-135px); }
+  .mill span:nth-of-type(3) {
+    transform: rotate(-135deg) translatey(-80px); }
+  .mill span:nth-of-type(4) {
+    transform: rotate(135deg) translatey(50px) translatex(135px); }
+
+@keyframes windmill {
+  0% {
+    transform: rotatez(0deg) translatey(-150px) translatex(95px); }
+  100% {
+    transform: rotatez(360deg) translatey(-150px) translatex(95px); } }
+
+/*# sourceMappingURL=style.css.map */

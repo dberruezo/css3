@@ -1,0 +1,46 @@
+$circles : 40;
+$rotateStep : -180 / $circles;
+$duration: 2;
+$delay: $duration / $circles;
+body{background:#123752;font-family: 'Roboto', sans-serif;font-weight:300;color:#fff;}
+
+.circle{
+  position:absolute;
+  left:50%; top:50%;
+  width:2vmin; height:2vmin;
+  margin:-1vmin;
+  border-radius:50%;
+  background:#326384;
+  transition:animation-delay 1s;
+}
+
+@for $i from 0 through $circles {
+  $rotatez : $i * $rotateStep;
+  .circle:nth-child(#{$i}) {
+    transform: rotatez($rotatez+deg) translate3d(30vmin,0,0);
+    animation: rotate#{$i} $duration+s ease-in-out infinite alternate;
+    transform-origin : 50% 50%;
+    /*animation-delay: -$i*$delay+s;*/
+  }
+  @keyframes rotate#{$i} {
+    to {transform:rotatez($rotatez+deg) translate3d(-30vmin,0,0);}
+  }
+}
+
+
+.com{display:inline-block;}
+#commands{
+  position:relative;
+  margin:0;padding:0;
+  list-style-type:none;
+  z-index:2;
+  padding-right:20px;
+}
+#commands li{
+  display:inline-block;
+  margin: 5px;
+  padding:8px 15px;
+  border:1px solid #326384;
+  cursor:pointer;
+}
+#range{display:block;width:100%;max-width:300px;list-style-type:none;position:relative;z-index:2}

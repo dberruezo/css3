@@ -1,0 +1,177 @@
+body {
+  /* make sure we don't get scrollbars */
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+  /* make it cover the whole vieport */
+  perspective: 32em;
+  background: #000;
+  /* add a gradient overlay to emulate some kind of shading
+   * it's stupid, but it's the best I could do this time */
+}
+body:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0), #000000 37.5vmin);
+  content: "";
+}
+
+div, :after {
+  position: absolute;
+}
+
+/* so 3D transformed children don't get flattened
+ * into the plane of their 3D transformed parents */
+[class*='3d'] {
+  transform-style: preserve-3d;
+}
+
+.a3d {
+  --i: 0;
+  /* vector/ index whatever the fuck along the x axis */
+  /* put assembly in the middle */
+  top: 50%;
+  left: 50%;
+  /* add an initial rotation so it doesn't rotate 
+   * around the scene's x and y axes */
+  --rot: rotate3d(0.37, 0.71, 0.19, -17deg);
+  transform: var(--rot) rotatex(0deg) rotatey(0deg);
+  animation: r linear 8s infinite;
+}
+
+/* simple and stupid rotation you can replace with something more interesting */
+@keyframes r {
+  50% {
+    transform: var(--rot) rotatex(-1turn) rotatey(0deg);
+  }
+  100% {
+    transform: var(--rot) rotatex(-1turn) rotatey(1turn);
+  }
+}
+.s3d {
+  /* vector/ index whatever the fuck along the y axis */
+  --j: calc(1 - var(--i));
+  /* initial position of pyramids planted on cube faces */
+  --pos: rotate3d(var(--i), var(--j), 0, calc(var(--m, 0)*90deg)) translatez(12.5vmin);
+  color: #cfa3aa;
+  animation: squish 1s cubic-bezier(0.17, 0.87, 0.32, 1.27) infinite alternate;
+  /* particular case for even faces
+   * (lateral even faces, though "lateral" 
+   * is meaningless once the thing starts rotating) */
+  /* particular case for last two faces 
+   * (top and bottom faces, though these terms  
+   * are meaningless once the thing starts rotating) */
+}
+.s3d:nth-child(2n) {
+  color: #9f9f99;
+}
+.s3d:nth-child(2n):nth-child(-n + 4) .s3gon:nth-child(odd) {
+  background: #EDE0BD;
+}
+.s3d:nth-child(2n):nth-child(-n + 4) .s4gon {
+  border-top-color: #EDE0BD;
+  border-bottom-color: #EDE0BD;
+}
+.s3d:nth-child(n + 5) {
+  --i: 1;
+  /* switch rotation axis to be x axis */
+  color: #7fbed1;
+}
+.s3d:nth-child(n + 5) .s3gon:nth-child(2n) {
+  background: #EDE0BD;
+}
+.s3d:nth-child(n + 5) .s4gon {
+  border-right-color: #EDE0BD;
+  border-left-color: #EDE0BD;
+}
+.s3d:nth-child(2) {
+  --m: 1;
+}
+.s3d:nth-child(3) {
+  --m: 2;
+}
+.s3d:nth-child(4) {
+  --m: 3;
+}
+.s3d:nth-child(5) {
+  --m: 1;
+}
+.s3d:nth-child(6) {
+  --m: -1;
+}
+
+/* compress pyramids planted on cube faces 
+ * along their height (z axis) */
+@keyframes squish {
+  0%, 31% {
+    transform: var(--pos) scalez(0.01);
+  }
+  69%, 100% {
+    transform: var(--pos) scalez(1);
+  }
+}
+/* generic styles for all 2D faces, whether triangles or squares */
+.s2d {
+  backface-visibility: hidden;
+  margin: -12.5vmin;
+  width: 25vmin;
+}
+
+/* triangle styles */
+.s3gon {
+  margin-top: -17.67767vmin;
+  height: 35.35534vmin;
+  /* position them on the square pyramid */
+  transform: rotate(calc(var(--k, 0)*90deg)) translatey(12.5vmin) rotatex(-45deg);
+  background: #F9973E;
+  /* cut triangle in upper half */
+  clip-path: polygon(50% 0, 100% 50%, 50% 50%, 0 50%);
+  /* cover with same background as square face they're over
+   * fades away as the pyramid gets "unsquished" 
+   * (grows out of the face or whtever the fuck you call it) */
+}
+.s3gon:nth-child(odd) {
+  background: #B4C398;
+}
+.s3gon:nth-child(2) {
+  --k: 1;
+}
+.s3gon:nth-child(3) {
+  --k: 2;
+}
+.s3gon:nth-child(4) {
+  --k: 3;
+}
+.s3gon:after {
+  width: inherit;
+  height: inherit;
+  background: currentcolor;
+  animation: shade 1s ease-out infinite alternate;
+  content: "";
+}
+
+@keyframes shade {
+  0%, 31% {
+    opacity: 1;
+  }
+  69%, 100% {
+    opacity: 0;
+  }
+}
+.s4gon {
+  /* use borders with the palette of the rhombic 12hedron 
+   * to prevent edges in between the 2 triangles 
+   * that form the rhombic faces from showing a gap in between
+   * these borders have the same border-color as the background 
+   * of the two triangles forming a rhombus that they show up 
+   * in between */
+  box-sizing: border-box;
+  border: solid 3px;
+  border-color: #B4C398 #F9973E;
+  /* basic styles, give squares a height and background 
+   * so they show up on the screen */
+  height: 25vmin;
+  background: currentcolor;
+}

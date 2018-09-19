@@ -1,0 +1,38 @@
+ul, li  {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: red;
+    color: white;
+    border: 1px solid #fff;
+}
+
+nav ul li {
+    padding: 3px 5px;
+}
+
+nav > ul > li {
+    position:relative;
+    min-width: 120px;
+    display: inline-block;
+    position:relative;
+    border-width: 0 1px 0 0;
+}
+
+nav ul ul {
+    position:absolute;
+    top: 100%;
+}
+
+nav li ul {
+    transition-property: transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+    transition-delay: 50ms;
+    transform: scale(1,0);
+    transform-origin: top center;
+}
+
+nav li:hover ul {
+    transform: scale(1,1);
+}

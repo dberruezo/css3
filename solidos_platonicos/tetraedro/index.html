@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h2{
+            text-align:center;
+            color:#666;
+            font-family:Helvetica;
+        }
+        div.espacio3D {
+            width: 200px;
+            height: 200px;
+            margin: 5em auto 0 auto;
+            /*border: 1px solid rgba(0,255,0,0.5);*/
+            position: relative;
+            perspective-origin: center -50%; /*punto desde donde se coloca la cÃ¡mara*/
+            perspective: 500px; /*area de distorsion de figura*/
+            transform: scale(0.90); /* tamaÃ±o de cubo */
+        }
+
+        div.cubo3D {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;/* indica la perspectiva*/
+            transform: translateZ(-10px);
+            animation-name: gira;
+            animation-duration: 3000ms;
+            animation-iteration-count: infinite;
+        }
+        aside.triangulo {
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+
+
+        aside.cara2 { /* centro */
+            transform:  rotateY(120deg) translateZ(0px) translateY(0px) rotateX(35deg);
+            border-right: 150px solid transparent;
+            border-top: 150px solid transparent;
+            border-left: 150px solid transparent;
+            border-bottom: 150px solid rgba(15,115,145,0.45);
+        }
+
+        aside.cara3 { /* Izquierda */
+            transform:  rotateY(-120deg) translateZ(0px) translateY(0px) rotateX(35deg);
+            border-right: 150px solid transparent;
+            border-top: 150px solid transparent;
+            border-left: 150px solid transparent;
+            border-bottom: 150px solid rgba(96,16,142,0.45);
+        }
+
+        aside.cara4 { /* derecha */
+            transform:   rotateY(0deg) translateZ(0px) translateY(0px) rotateX(35deg);
+            border-right: 150px solid transparent;
+            border-top: 150px solid transparent;
+            border-left: 150px solid transparent;
+            border-bottom: 150px solid rgba(226,207,32,0.45);
+        }
+
+
+        @keyframes gira {
+            0% {
+                transform: translateZ(-100px) rotateY(0deg);
+            }
+            100% {
+                transform: translateZ(-100px) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<h2>Tetraedro 3D con puro HTML5 y CSS3</h2>
+<div class="espacio3D">
+    <div class="cubo3D">
+        <div class="base"></div> <!--sombra-->
+        <aside class="triangulo cara2"></aside>
+        <aside class="triangulo cara3"></aside>
+        <aside class="triangulo cara4"></aside>
+    </div><!-- termina cubo 3d -->
+</div><!-- termina espacio 3d -->
+</body>
+</html>

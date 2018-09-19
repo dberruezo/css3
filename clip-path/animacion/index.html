@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animación</title>
+    <style>
+        img.animate {
+            animation: magic 4s infinite;
+        }
+
+        @keyframes magic {
+            0% {
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+            20% {
+                -webkit-clip-path: polygon(28% 0, 73% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(28% 0, 73% 0, 100% 100%, 0% 100%);
+            }
+            40% {
+                -webkit-clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 35%);
+                clip-path: polygon(0 0, 100% 72%, 100% 100%, 0 35%);
+            }
+            60% {
+                -webkit-clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(50% 0, 50% 0, 100% 100%, 0% 100%);
+            }
+            80% {
+                -webkit-clip-path: polygon(0 70%, 100% 0, 100% 32%, 0 100%);
+                clip-path: polygon(0 70%, 100% 0, 100% 32%, 0 100%);
+            }
+            100% {
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+    </style>
+</head>
+<body>
+<img width="245" height="245" src="logo.png" class="animate">
+<button value="animar"></button>
+<script>
+    let toAnimate = document.querySelector('.trigger');
+    let button = document.querySelector('.trigger-btn');
+
+    button.addEventListener('click', function() {
+        if (toAnimate.classList.contains('animate')) {
+            toAnimate.classList.remove('animate');
+            this.innerText = 'Start';
+        } else {
+            toAnimate.classList.add('animate');
+            this.innerText = 'Stop';
+        }
+    });
+</script>
+</body>
+</html>

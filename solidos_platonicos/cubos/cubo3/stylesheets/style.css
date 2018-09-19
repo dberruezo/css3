@@ -1,0 +1,145 @@
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .layer.top {
+    animation: 3.7s top cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+  .layer.bottom {
+    animation: 3.7s bottom cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+.n {
+  animation: 3.7s "n" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes n {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(79px, -79px); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(79px, -79px); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(158px, -158px); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(158px, -158px); } }
+.s {
+  animation: 3.7s "s" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes s {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-79px, 79px); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-79px, 79px); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-158px, 158px); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-158px, 158px); } }
+.e {
+  animation: 3.7s "e" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes e {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(79px, 0); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(158px, 0); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(158px, 0); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(79px, 0); } }
+.w {
+  animation: 3.7s "w" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes w {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-79px, 0); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-158px, 0); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-158px, 0); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-79px, 0); } }
+.ne {
+  animation: 3.7s "ne" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes ne {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(158px, -79px); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(237px, -79px); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(316px, -158px); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(237px, -158px); } }
+.se {
+  animation: 3.7s "se" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes se {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(0, 79px); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(79px, 79px); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(0px, 158px); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-79px, 158px); } }
+.sw {
+  animation: 3.7s "sw" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes sw {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-158px, 79px); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-237px, 79px); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-316px, 158px); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-237px, 158px); } }
+.nw {
+  animation: 3.7s "nw" cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+
+@keyframes nw {
+  0%, 83.33%, 100% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(0px, -79px); }
+  16.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(-79px, -79px); }
+  33.33%, 50% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(0px, -158px); }
+  66.66% {
+    transform: matrix(0.9, 0.5, 0, 1, 0, 0) translate(79px, -158px); } }
+.cube {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background: #d33d39;
+  transform: matrix(0.9, 0.5, 0, 1, 0, 0); }
+  .cube:before, .cube:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  .cube:before {
+    background: #279099;
+    transform: matrix(1, -1, 1, 0, 40, -80); }
+  .cube:after {
+    background: #e59b2a;
+    transform: matrix(1, -1, 0, 1, 80, -40); }
+
+@keyframes top {
+  0%, 33.33%, 100% {
+    transform: translate(0, -79px); }
+  50%, 83.33% {
+    transform: translate(0, -158px); } }
+@keyframes bottom {
+  0%, 33.33%, 100% {
+    transform: translate(0, 79px); }
+  50%, 83.33% {
+    transform: translate(0, 158px); } }
+html {
+  background-color: #262626; }
+
+html, body {
+  height: 100%;
+  overflow: hidden; }
+
+/*# sourceMappingURL=style.css.map */

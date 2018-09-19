@@ -1,0 +1,25 @@
+img{
+    max-width: 100%;
+}
+
+.caja{
+    float:left;
+    width:32.3%;
+    margin:0.5%;
+    border:1px dashed #999;
+    padding:.5em;
+    color:444;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.caja_inline{
+    display:inline-block;
+    width:49%;
+    width:32%;
+    border:1px dashed #999;
+    padding:.5em;
+    color:444;
+    box-sizing: border-box;
+    vertical-align: top;
+}

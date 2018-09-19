@@ -1,0 +1,275 @@
+
+/* Imported Font from google fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900');
+
+
+/* Color palette */
+
+$primary: #003459;
+$primary--lighter: #00A7E1;
+$primary--darker: #00171F;
+$secondary: #00A75F;
+$white: #FAFAFA;
+
+
+/* General Styles */
+
+body, html {
+  font-family: 'Source Sans pro', sans-serif;
+  background-color: $white;
+  font-size: 18px;
+}
+
+.sections {
+  padding: 40px;
+  @media (min-width: 960px) {
+    padding: 40px calc( (100% - 900px)/2 );
+  }
+}
+
+header {
+  @extend .sections;
+  text-align: center;
+  h2 {
+    font-size: 32px;
+    color: $primary--darker;
+  }
+  h3 {
+    width: 140px;
+    margin: auto;
+    padding-top: 20px;
+    color: $primary;
+    border-top: rgba($primary,.25) dotted 2px;
+  }
+  p {
+    color: #333333;
+  }
+}
+
+.container {
+  @extend .sections;
+  position: relative;
+  overflow: visible;
+  min-height: 240px;
+  perspective: 800px;
+}
+
+
+/* Cube Cat */
+.cube {
+  height: 240px;
+  width: 240px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  overflow: visible;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: rotation 5s linear infinite;
+}
+
+.side {
+  height: 160px;
+  position: absolute;
+  width: 200px;
+}
+
+.eye {
+  height: 40px;
+  width: 40px;
+  background-color: $white;
+  position: absolute;
+  top: 60px;
+}
+
+.eye--left {
+  left: 20px;
+}
+
+.eye--right {
+  right: 20px;
+}
+
+.nose {
+  position: relative;
+  height: 0;
+  width: 0;
+  top: 80px;
+  margin-left: 50%;
+  left: -10px;
+  border-color: transparent;
+  border-top-color: $white;
+  border-style: solid;
+  border-width: 10px;
+}
+
+.side--ear {
+  &:after, &:before {
+    position: absolute;
+    content: "";
+    display: block;
+    z-index: 99;
+    height: 0;
+    width: 0;
+    top: -40px;
+    border-color: transparent;
+    border-bottom-color: $primary;
+    border-style: solid;
+    border-width: 20px 20px;
+  }
+  &:after {
+    left: 0;
+    border-left-width: 0;
+  }
+  &:before {
+    right: 0;
+    border-right-width: 0;
+  }
+}
+
+/* front */
+.side--a {
+  @extend .side--ear;
+  background-color: $primary;
+  transform: translate3d( 0, 0, 100px) ;
+}
+
+/* back */
+.side--b {
+  @extend .side--ear;
+  background-color: $primary;
+  transform: rotateX(180deg) translateZ(100px);
+  &:after, &:before {
+    top: 160px;
+    border-bottom-color: transparent;
+    border-top-color: $primary;
+  }
+}
+
+/* left side */
+.side--c {
+  @extend .side--ear;
+  background-color: $primary--darker;
+  transform: rotateY(-90deg) translateZ(100px);
+  &:after, &:before {
+    border-bottom-color: $primary--darker;
+  }
+}
+
+/* right side*/
+.side--d {
+  @extend .side--ear;
+  background-color: $primary--darker;
+  transform: rotateY(90deg) translateZ(100px);
+  &:after, &:before {
+    border-bottom-color: $primary--darker;
+  }
+}
+
+/* top */
+.side--e {
+  height: 200px;
+  background-color: $primary--darker;
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+/* bottom */
+.side--f {
+  height: 200px;
+  background-color: $primary--darker;
+  transform: rotateX(-90deg) translateZ(60px);
+}
+
+@keyframes rotation{
+  0% {
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateY(190deg) rotateX(10deg) rotateZ(10deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(0deg) rotateZ(0deg);
+  }
+}
+
+
+/* faces */
+
+.side--a {
+  .eye {
+    border-radius: 50%;
+  }
+}
+
+.side--b {
+  .eye {
+    height: 20px;
+    border-radius: 20px 20px 0 0;
+    bottom: 60px;
+    top: auto;
+  }
+  .nose {
+    border-top-color: transparent;
+    border-bottom-color: $white;
+    top: 60px;
+  }
+}
+
+.side--c {
+  .eye {
+    height: 20px;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+.side--d {
+  .eye {
+    background-color: transparent;
+    border-width: 4px;
+    border-style: solid;
+    border-color: $white;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    transform: rotate(45deg);
+  }
+}
+
+/* Footer */
+
+footer {
+  @extend .sections;
+  background-color: $primary--darker;
+  color: $white;
+}
+
+.footer__title {
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+.footer__subtitle {
+  font-size: 22px;
+  color: $primary--lighter;
+}
+
+.footer__parragraph {
+  line-height: 1.5em;
+  font-size: 22px;
+  a {
+    color: $secondary;
+  }
+}
+
+.footer__list {
+  @extend .footer__parragraph;
+}
+
+.copyright {
+  @extend .footer__parragraph;
+  text-align: center;
+  border-top: 1px dashed rgba($white,.15);
+  padding: 10px 0;
+  margin: 40px auto;
+}

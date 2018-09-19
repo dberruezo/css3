@@ -1,0 +1,43 @@
+h1{
+    text-align: center;
+    color:#aaa;
+}
+
+h2{
+    text-align: center;
+    color:#eee;
+    font-size:4em;
+}
+
+h2::before{
+    content:"Mi segundo ";
+}
+
+h2::after{
+    content:" de texto";
+}
+
+
+h1::before{
+    content:"Mi primer ";
+}
+
+h1::after{
+    content:" de texto";
+}
+
+h3::after{
+    content:".00";
+}
+
+
+h4::before{
+    content:"Precio: ";
+}
+
+h4::after{
+    content:" .00 $";
+}
+
+
+

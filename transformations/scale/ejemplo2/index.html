@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo2</title>
+    <style>
+       .cuadro{
+           width:200px;
+           height:100px;
+           transform: scale(1);
+           transition-property: transform,background;
+           transition-duration: .3s;
+           transition-timing-function: ease-in;
+           /*transform-origin: top center;*/
+           background-color: #cccccc;
+           cursor:pointer;
+           float:left;
+           margin-right:20px;
+        }
+       .cuadro:hover{
+           transform: scale(1.5);
+           transition-property: transform,background;
+           transition-duration: .3s;
+           transition-timing-function: ease-out;
+           /*transform-origin: top center;*/
+           background-color: #333333;
+           cursor:pointer;
+           z-index:3;
+       }
+    </style>
+</head>
+<body>
+<div class="cuadro" style="z-index:1"></div>
+<div class="cuadro" style="z-index:2"></div>
+<div class="cuadro" style="z-index:3"></div>
+</body>
+</html>

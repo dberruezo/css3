@@ -1,0 +1,31 @@
+body
+{
+    padding:0px;
+    margin:0px;
+    cursor:none; /* Nous enlevons le curseur */
+    background-color:black;
+}
+
+#mask
+{
+    width:100vw;
+    height:100vh;
+}
+
+#lamp
+{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:300px;
+    height:300px;
+    border-radius:150px;
+    border-style:solid;
+    border-color:white;
+    background:inherit;
+    box-shadow:1px 1px 12px white;
+    background-image:url('http://static.hdw.eweb4.com/media/wallpapers_1920x1080/world/1/1/new-york-world-hd-wallpaper-1920x1080-9854.jpg');
+    background-size: cover;
+    background-position:0% 0%;
+    background-attachment : fixed;
+}

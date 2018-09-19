@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var faces = document.querySelectorAll('.face'),
+        n = faces.length,
+        styles = [],
+        _style = getComputedStyle(faces[0]),
+        factor = 3 /* how much to rotate when dragging */,
+        side = parseInt(_style.width.split('px')[0], 10),
+        max_amount = factor*side,
+        unit = 360/max_amount /* rotation angle per 1px move */,
+        flag = false /* whether cube is being dragged */,
+        tmp, p = 'perspective(32em) ' /* perspective value */;
+
+    var drag = function(e) {
+        /* distance and angle values since starting to drag */
+        var p1 = { 'x': e.clientX - p0.x, 'y': e.clientY - p0.y },
+            angle = {'x': -p1.y*unit, 'y': p1.x*unit};
+
+        /* current transform values */
+        for(var i = 0; i < n; i++) {
+            tmp = 'rotateX(' + angle.x + 'deg)' +
+                'rotateY(' + angle.y + 'deg)' + styles[i];
+
+            faces[i].style.transform = p + tmp;
+            faces[i].style['-webkit-transform'] = p + tmp;
+        }
+    };
+
+    window.addEventListener('mousedown', function(e) {
+        var t = e.target;
+
+        if(t.classList.contains('face')){
+            e.preventDefault();
+            p0 = { 'x': e.clientX, 'y': e.clientY };
+            flag = true;
+
+            window.addEventListener('mousemove', drag, false);
+        }
+        else {
+            flag = false;
+        }
+    }, false);
+
+    window.addEventListener('mouseup', function(e) {
+        if(flag) {
+            /* transform values at end of drag */
+            for(var i = 0; i < n; i++) {
+                _style = faces[i].style;
+                tmp = _style.transform || _style['-webkit-transform'];
+                styles[i] = tmp.replace('perspective(32em) ', '');
+            }
+        }
+
+        flag = false;
+
+        window.removeEventListener('mousemove', drag, false);
+    }, false);
+
+    /* position all the faces on the cube */
+    for(var i = 0; i < n; i++) {
+        tmp = ((i < 4) ? 'rotateY(' + i*90 + 'deg)' :
+            'rotateX(' + Math.pow(-1, i)*90 + 'deg)') +
+            ' translateZ(' + side/2 + 'px)';
+
+        faces[i].style.transform = p + tmp;
+        faces[i].style['-webkit-transform'] = p + tmp;
+
+        styles.push(tmp);
+    }
+</script>
+</body>
+</html>

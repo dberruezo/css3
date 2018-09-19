@@ -1,0 +1,26 @@
+/* reset css */
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.flexContainer {
+    display: flex;
+}
+
+.flexCenter {
+    justify-content: center;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.itemCenter {
+    align-items: center;
+}
+
+.centerImage {
+    background: url('images/ocean.jpg') center;
+    background-size: cover;
+}

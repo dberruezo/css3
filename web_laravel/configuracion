@@ -1,0 +1,11 @@
+CONFIGURACION APLICACION
+-----------------------------
+1.- CREATE PROJECT LARAVEL
+2.- CREATE MIGRATIONS
+    2.1.- php artisan migrate:make create_bears_table --create=bears
+    2.2.- php artisan migrate:make create_fish_table --create=fish
+    2.3.- php artisan migrate:make create_trees_table --create=trees
+    2.4.- php artisan migrate:make create_picnics_table --create=picnics
+    2.5.- php artisan migrate:make create_bears_picnics_table --create=bears_picnics
+3.- TODOS === php artisan migrate
+

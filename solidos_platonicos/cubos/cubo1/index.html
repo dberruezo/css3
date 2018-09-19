@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cubos</title>
+    <link href="css/estilos.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.0.js"></script>
+    <script src="js/funciones.js"></script>
+</head>
+<body>
+
+<div id="perspective">
+    <div id="pane"></div>
+</div>
+
+<div id="controls">
+    <form>
+        <table>
+            <tr>
+                <td>Cubes</td>
+                <td><input id="entities" type="range" min="1" max="12" step="1" value="1"/></td>
+                <td>5</td>
+                <!--
+                <td><input id="entities" type="range" min="1" max="12" step="1" value="5"/></td>
+                <td>5</td>
+                -->
+            </tr>
+
+            <tr>
+                <td>Cube Size</td>
+                <td><input id="size" type="range" min="10" max="100" step="5" value="40"/></td>
+                <td>40</td>
+            </tr>
+
+            <tr>
+                <td>Spacing</td>
+                <td><input id="spacing" type="range" min="0" max="50" step="1" value="5"/></td>
+                <td>5</td>
+            </tr>
+
+            <tr>
+                <td>Perspective</td>
+                <td><input id="pers" type="range" min="100" max="1500" step="50" value="600"/></td>
+                <td>600</td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<a id="toggle" class="hide" href="#">Hide</a>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Triangulos</title>
+    <style>
+        /* Fonts */
+        @import "https://fonts.googleapis.com/css?family=Pacifico";
+        /* Variables for box and CSS triangles */
+        /* End Variables */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+        }
+
+        body {
+            font-size: 16px;
+        }
+
+        .twitter {
+            background-color: white;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+            font-family: sans-serif;
+        }
+        .twitter a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        .twitter span,
+        .twitter i {
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+        .twitter i {
+            margin: 0 0 0 5px;
+        }
+        .twitter:hover {
+            background-color: black;
+        }
+        .twitter:hover span,
+        .twitter:hover i {
+            color: white;
+        }
+
+        header {
+            font-family: 'Pacifico', cursive, Sans-Serif;
+            font-size: 48px;
+            color: #4d4d4d;
+            text-align: center;
+            margin: 45px 0 15px;
+        }
+
+        header span {
+            display: block;
+        }
+
+        header small {
+            font-size: 50%;
+            color: #999999;
+        }
+
+        .wrapper {
+            width: 540px;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* box styles */
+        .box {
+            width: 220px;
+            height: 146.66667px;
+            float: left;
+            margin: 25px;
+            background-color: #d66c5c;
+            padding: 15px;
+            border-radius: 2.75px;
+            position: relative;
+        }
+
+        /* End of box */
+        /* Triangle */
+        .triangle:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            z-index: 1;
+            border-width: 11px;
+            border-style: solid;
+            border-color: transparent;
+        }
+
+        .triangle.top:before {
+            border-bottom-color: #d66c5c;
+            top: -22px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        .triangle.right:before {
+            border-left-color: #d66c5c;
+            right: -22px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        .triangle.bottom:before {
+            border-top-color: #d66c5c;
+            bottom: -22px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+
+        .triangle.left:before {
+            border-right-color: #d66c5c;
+            left: -22px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+
+        /* End Triangle */
+        /* CSS for p tags */
+        p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 146.66667px;
+            text-align: center;
+            line-height: 146.66667px;
+            color: white;
+            font-family: 'Pacifico', cursive, Sans-Serif;
+            font-size: 36px;
+            -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="twitter">
+        <a target="_blank" href="https://twitter.com/matthewsco1_"></a>
+        <span>Follow Me on Twitter</span>
+        <i class="fa fa-twitter"></i>
+    </div>
+
+    <header>
+        <span>Easy & Simple CSS Triangles</span>
+        <small>Instructions are within the HTML & CSS</small>
+    </header>
+
+    <section class="wrapper">
+        <div class="box triangle bottom"> <!-- Simply add "triangle" & the direction as classes -->
+            <p>Bottom</p>
+        </div>
+
+        <div class="box triangle left">
+            <p>Left</p>
+        </div>
+
+        <div class="box triangle right">
+            <p>Right</p>
+        </div>
+
+        <div class="box triangle top">
+            <p>Top</p>
+        </div>
+    </section>
+
+</body>
+</html>

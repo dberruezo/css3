@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,100);
+
+$colors: #f44336, #009688, #ffc107, #2196f3, #ff5722, #8bc34a;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b0bec5;
+  font-family: "Raleway";
+}
+
+h1 {
+  text-align: center;
+  font-size: 72px;
+  font-weight: 100;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+
+  input {
+    display: none;
+  }
+}
+
+/* pieces */
+.piece {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  transform-origin: right bottom;
+  right: 149px;
+  bottom: 149px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .2s cubic-bezier(0,0,.38,1);
+  cursor: pointer;
+
+  i {
+    color: #fff;
+    position: absolute;
+    opacity: .8;
+    font-size: 42px;
+    bottom: 32px;
+    right: 44px;
+    transition: all .2s cubic-bezier(0,0,.38,1);
+  }
+
+  &:hover {
+    i {
+      opacity: 1;
+    }
+  }
+}
+
+/* opened pieces styles */
+@for $index from 1 to 7 {
+  input:checked ~ .piece:nth-child(#{$index}n) {
+    transform: rotate(60deg * $index) skew(25deg);
+
+    i {
+      transform: skew(-25deg) rotate(-60deg * $index);
+    }
+  }
+}
+
+input:checked ~ .piece {
+  visibility: visible;
+  opacity: 1;
+}
+
+$i: 1;
+@while $i < 7 {
+  .piece:nth-child(#{$i}n + 0) {
+    background-color: nth($colors, $i);
+
+    &:hover {
+      background-color: darken(nth($colors, $i), 10%);
+    }
+  }
+
+  $i: $i + 1;
+}
+
+.dot {
+  font-family: initial;
+  background: #ddd;
+  width: 75px;
+  height: 75px;
+  display: block;
+  position: absolute;
+  top: 112.5px;
+  left: 112.5px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  cursor: pointer;
+  font-size: 48px;
+  text-align: center;
+  line-height: 75px;
+  transform: rotate(45deg);
+  color: rgba(0,0,0,.54);
+  transition: all .2s cubic-bezier(0,0,.38,1);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &:hover {
+    color: #2196f3;
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+  }
+}
+
+/* opened dot styles */
+input:checked ~ .dot {
+  transform: rotate(180deg);
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  line-height: 70px;
+}

@@ -1,0 +1,70 @@
+html {
+    font-size:10px;
+}
+
+.caja{
+    font-size:12px;
+    float:left;
+    border:1px solid #cccccc;
+    color:#333;
+    padding:1em;
+    margin:1%;
+    box-sizing:border-box;
+}
+
+.caja img{
+    max-width:100%;
+    height:auto;
+}
+
+.caja p{}
+
+ul{
+    clear:both;
+}
+
+ul li{
+    font-size:2em;
+}
+
+
+/*
+ * Añadiremos 2 columnas
+ * con box sizing border box
+ * margen 1% que es para cada
+ * lado entonces = 2%
+ */
+@media (min-width:360px){
+    .caja{
+        width:48%;
+    }
+}
+
+/*
+ * Añadiremos 3 columnas
+ * con box sizing border box
+ * margen 1% que es para cada
+ * lado entonces = 2%
+ */
+@media (min-width:768px){
+    .caja{
+        width:31.33%;
+    }
+}
+
+
+/*
+ * Añadiremos 3 columnas
+ * con box sizing border box
+ * margen 1% que es para cada
+ * lado entonces = 2%
+ */
+@media (min-width:1200px){
+    .caja{
+        width:23%;
+    }
+}
+
+
+
+

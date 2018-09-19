@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circulos</title>
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+
+<div class="com">
+    <h2>Play with me:</h2>
+    <ul id="commands">
+        <li data-delay="0">Default</li>
+        <li data-delay="1">1 Circle</li>
+        <li data-delay="5">flower 5</li>
+        <li data-delay="27">27</li>
+    </ul>
+</div>
+<div class="com">
+    <h2>choose a value</h2>
+    <input id="range" type="range" min="0" max="30" value="1"/>
+</div>
+<script>
+    $( document ).ready(function() {
+        var animationDelay,i;
+        var animationPattern = 1;
+        var elements = $('.circle').length;
+
+        function changeDelay(){
+            $(".circle").each(function() {
+                animationDelay = -i*2/elements*animationPattern;
+                $(this).animate({"animation-delay": animationDelay+'s'},4000);
+                i++;
+            });
+        }
+
+        $('#commands li').click(function(){
+            i=1;
+            animationPattern = $(this).attr('data-delay');
+            $('#range').val(animationPattern);
+            changeDelay();
+        });
+        $('#range').click(function(){
+            i=1;
+            animationPattern = $(this).val();
+            changeDelay();
+            console.log(animationPattern);
+        });
+    });
+
+
+</script>
+</body>
+</html>

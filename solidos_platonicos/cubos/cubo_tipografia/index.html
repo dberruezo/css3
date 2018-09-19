@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cubo tipografia</title>
+    <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- <script src="http://www.davidberruezo.com/codepen/javascript/csscube/script.js"></script> -->
+</head>
+<body>
+<div class="contenedor">
+
+    <div class="contenedor_perspectiva">
+        <div class="contenedor_rotacion_cubo" id="rotarcubo">
+            <div class="cubo front"></div>
+            <div class="cubo back"></div>
+            <div class="cubo left"></div>
+            <div class="cubo right"></div>
+            <div class="cubo top"></div>
+            <div class="cubo bottom"></div>
+        </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <table borcer="1" class="table" cellpadding="0" cellspacing="0">
+        <tr>
+            <td colspan="7">Change to view</td>
+        </tr>
+        <tr>
+            <td><p>inicial | </p></td>
+            <td><p>front | </p></td>
+            <td><p>back | </p></td>
+            <td><p>left | </p></td>
+            <td><p>right | </p></td>
+            <td><p>top | </p></td>
+            <td><p>bottom</p></td>
+        </tr>
+        <tr>
+            <td><input type="radio" class="radios" checked id="radio-defecto" name="select-face" onclick="rotar('defecto')"/></td>
+            <td><input type="radio" class="radios" id="radio-front" name="select-face" onclick="rotar('front')"/></td>
+            <td><input type="radio" class="radios" id="radio-back" name="select-face" onclick="rotar('back')"/></td>
+            <td><input type="radio" class="radios" id="radio-left" name="select-face" onclick="rotar('left')"/></td>
+            <td><input type="radio" class="radios" id="radio-right" name="select-face" onclick="rotar('right')"/></td>
+            <td><input type="radio" class="radios" id="radio-bottom" name="select-face" onclick="rotar('top')"/></td>
+            <td><input type="radio" class="radios" id="radio-top" name="select-face" onclick="rotar('bottom')"/></td>
+        </tr>
+        <tr>
+            <td colspan="7"></td>
+        </tr>
+        <tr>
+            <td colspan="7">Rotate x y z axis</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><p>Start(xy) | </p></td>
+            <td><p>Stop | </p></td>
+            <td><p>X | </p></td>
+            <td><p>Y | </p></td>
+            <td><p>Z | </p></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="radio" class="radios" id="start_rotate" name="select-face" onclick="axis('start')"/></td>
+            <td><input type="radio" class="radios" id="stop_rotate" name="select-face" onclick="axis('stop')"/></td>
+            <td><input type="radio" class="radios" id="axisx" name="select-face" onclick="axis('x')"/></td>
+            <td><input type="radio" class="radios" id="axisy" name="select-face" onclick="axis('y')"/></td>
+            <td><input type="radio" class="radios" id="axisz" name="select-face" onclick="axis('z')"/></td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+$defined-bs-type: border-box !default;
+$defined-radius-type: border-radius !default;
+
+
+@mixin bs($bs-type: $defined-bs-type) {
+	-webkit-box-sizing: $bs-type;
+	-moz-box-sizing: $bs-type;
+	box-sizing: $bs-type;
+}
+
+@mixin radius ($radius-type: $defined-radius-type){
+	-webkit-border-radius: $border;
+	-moz-border-radius: $border;
+	-ms-border-radius: $border;
+	-o-border-radius: $border;
+	border-radius: $border;
+}
+

@@ -1,0 +1,88 @@
+body{
+    font-family: sans-serif;
+    margin: 0px;
+    padding:0px;
+    padding-bottom: 200em;
+}
+
+section{
+    position:relative;
+    border:2px dashed steelblue;
+    margin:5em auto;
+    width:400px;
+    height:400px;
+    margin-top:10em;
+    padding:2em;
+ }
+
+div{
+    position:relative;
+    display:table;
+    width:100px;
+    height:100px;
+}
+
+.uno{
+    background:palegreen;
+    top:50px;
+    left:50px;
+    /*z-index:30;*/
+}
+
+.uno:before,.uno:after{
+    content:"";
+    display:block;
+    width:15px;
+    height:15px;
+    background:tomato;
+    position:absolute;
+}
+
+/*
+ * z-index en 
+ * pseudoclases 
+ * == -1 y en el padre no z-index
+ */
+
+.uno:before{
+
+}
+
+.uno:after{
+    background:steelblue;
+    z-index:-1;
+}
+
+
+.dos{
+    background:tomato;
+    top:10px;
+    left:100px;
+}
+
+.tres{
+    background:lightblue;
+    top:0px;
+    left:50px;
+}
+
+.cuatro{
+    background:palegreen;
+    top:50px;
+    left:50px;
+    z-index: 40;
+}
+
+.cinco{
+    background:tomato;
+    top:10px;
+    left:100px;
+    z-index: 30;
+}
+
+.seis{
+    background:lightblue;
+    top:0px;
+    left:50px;
+    z-index: 20;
+}

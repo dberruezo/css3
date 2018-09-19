@@ -1,0 +1,7 @@
+h1::before {
+    content:"David ";
+}
+
+h1::after {
+    content:" Crack";
+}

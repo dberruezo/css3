@@ -1,0 +1,55 @@
+/* reset */
+h1 { font-size: 2rem; }
+
+h2 { font-size: 1.5rem; }
+
+h3 { font-size: 1.25rem; }
+
+h4 { font-size: 1rem }
+
+h5 { font-size: .75rem; }
+
+h6 { font-size: .5rem; }
+
+/* These styles will style our link
+   in all states */
+   a {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  /* We want visited links to be the same color
+     as non visited links */
+  a:visited {
+    color: green;
+  }
+  
+  /* We highlight the link when it is
+     hovered (mouse), activated
+     or focused (keyboard) */
+  a:hover
+  {
+    color: red;
+    text-decoration: none;
+  }
+
+  a:active{
+    color: brown;
+    text-decoration: none;
+  }
+
+  a:focus {
+    color: gray;
+    text-decoration: none;
+  }
+  
+div{
+    background-color:#ccc;
+    width:150px;
+    height:100px;
+    margin-top:50px;
+}
+
+p i:first-child {
+    color: blue;
+} 

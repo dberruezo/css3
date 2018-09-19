@@ -1,0 +1,209 @@
+$grass: #B5E1AF;
+$line:#4B1472;
+$wall: #B783BF;
+$door:#6e2d90;
+$circle: #FF9CCE;
+$asp: #faefdb;
+*{
+  box-sizing: border-box;
+}
+body{
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items: center;
+}
+
+span{
+  position:absolute;
+}
+
+.grass{
+  background-color:$grass;
+  width:200px;
+  height:50px;
+  border-radius:25px;
+  z-index:1;
+}
+.wrap{
+  margin-left:-200px;
+  margin-top:100px;
+}
+.base{
+  background-color:$line;
+  width:120px;
+  height:5px;
+  z-index:2;
+  border-radius:5px;
+  transform: translatey(25px) translatex(40px);
+}
+.windm_base{
+  background-color: $wall;
+  width: 60px;
+  height:100px;
+  z-index:1;
+  transform:translatey(-70px) translatex(66px);
+  &:before{
+    position:absolute;
+    content:"";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 10px;
+    border-color: transparent transparent $wall transparent;
+    z-index:2;
+    transform:translatex(-10px);
+  }
+  &:after{
+    position:absolute;
+    content:"";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 0 0 20px;
+    border-color: transparent transparent transparent $wall;
+    z-index:2;
+    transform: translatex(60px);
+  }
+}
+
+.door{
+  background-color: $door;
+  width:40px;
+  height:30px;
+  z-index:3;
+  border-left: 5px solid $line;
+  border-right: 5px solid $line;
+  transform:translatex(80px) translatey(0px);
+}
+.door_circle{
+  background-color: $door;
+  width:40px;
+  height:40px;
+  z-index:2;
+  border-radius:50%;
+  border:5px solid $line;
+  transform: translatex(80px) translatey(-20px);
+}
+
+.divisor{
+  position:absolute;
+  background-color: $circle;
+  z-index:3;
+  width:55px;
+  height:20px;
+  border-top:5px solid $line;
+  border-bottom:5px solid $line;
+  transform: translatey(-70px) translatex(70px);
+  box-shadow:0 3px 5px lighten($line,5%);
+}
+
+.top_base{
+  width:50px;
+  height:40px;
+  background-color:$wall;
+  z-index:2;
+  transform:translatey(-107px) translatex(72px);
+  &:before{
+    position:absolute;
+    content:"";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 40px 5px;
+    border-color: transparent transparent $wall transparent;
+    z-index:2;
+    transform:translatex(-5px);
+  }
+  &:after{
+    position:absolute;
+    content:"";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 40px 0 0 5px;
+    border-color: transparent transparent transparent $wall;
+    z-index:2;
+    transform: translatex(50px);
+  }
+}
+.top{
+  width:36px;
+  height:36px;
+  background-color: $wall;
+  border:5px solid $line;
+  z-index:1;
+  transform: translatey(-125px) translatex(79px) rotate(45deg);
+}
+.line_left{
+  background-color:$line;
+  width:6px;
+  height:135px;
+  z-index:3;
+  transform:translatey(-108px) translatex(64px) rotate(7deg);
+}
+.line_right{
+  background-color:$line;
+  width:6px;
+  height:135px;
+  z-index:3;
+  transform:translatey(-109px) translatex(127px) rotate(-10deg);
+}
+.circle{
+  background-color: $circle;
+  width:20px;
+  height:20px;
+  border:4px solid $line;
+  border-radius:50%;
+  z-index:4;
+  transform: translatex(88px) translatey(-100px);
+}
+.mill{
+  position:absolute;
+  width:240px;
+  height:240px;
+  z-index:3;
+  margin-top:-90px;
+  margin-left:98px;
+  transform:translatey(-450px) translatex(95px);
+  transform-origin:  0 0;
+  animation: windmill 3s infinite linear;
+  span{
+    width:5px;
+    height:110px;
+    background-color:$line;
+    &:before{
+      content:"";
+      position:absolute;
+      width:30px;
+      height:60px;
+      background-color:$asp;
+      border:5px solid $line;
+      margin-top:50px;
+    }
+  }
+  span:first-of-type{
+    transform:rotate(45deg) translatey(190px);
+  }
+  span:nth-of-type(2){
+    transform:rotate(-45deg) translatey(60px) translatex(-135px);
+  }
+  span:nth-of-type(3){
+    transform:rotate(-135deg) translatey(-80px);
+  }
+  span:nth-of-type(4){
+    transform:rotate(135deg) translatey(50px) translatex(135px);
+  }
+}
+
+@keyframes windmill{
+  0%{
+    transform: rotatez(0deg) translatey(-150px) translatex(95px);
+
+  }
+  100%{
+    transform: rotatez(360deg) translatey(-150px) translatex(95px);
+
+  }
+}

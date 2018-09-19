@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hola</title>
+    <style>
+        body{
+            background-color: #cccccc;
+        }
+        .box {
+            width: 180px;
+            height: 100px;
+            float: left;
+            margin: 25px;
+            background-color: #ffffff;
+            padding: 5px;
+            border-radius: 2.75px;
+            position: relative;
+        }
+
+        /* Triangle */
+        .triangle:before {
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            z-index: 1;
+            border-width: 11px;
+            border-style: solid;
+            border-color: transparent;
+        }
+
+        .triangle.top:before {
+            border-bottom-color: #ffffff;
+            top: -22px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+<div class="box triangle top">
+    <p style="text-align:center;">USUARIO XERPA</p>
+    <hr>
+    <p style="text-align:center;">PARTNER XERPA</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+@mixin perspective ($valor){
+  -moz-perspective: $valor;
+  -webkit-perspective: $valor;
+  perspective: $valor;
+}
+
+@mixin transition($valor){
+  -moz-transition: $valor;
+  -o-transition: $valor;
+  -webkit-transition: $valor;
+  transition: $valor;
+}
+
+@mixin transform3d($rotates){
+  -moz-transform: $rotates;
+  -webkit-transform: $rotates;
+  transform: $rotates;
+}
