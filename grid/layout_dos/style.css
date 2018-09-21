@@ -1,0 +1,42 @@
+.contenedor{
+    display:grid;
+    grid-template-columns: 150px auto 150px;
+    grid-gap:10px;
+}
+
+header,footer,nav{
+    grid-column:1 / 4;
+}
+
+.aside_one{
+    grid-column:1 / 2;   
+}
+
+.aside_two{
+    grid-column:3 / 4;   
+}
+
+article{
+    grid-column:2 / 3;
+}
+
+header,
+nav,
+aside,
+article{
+    background: #ccc;
+}
+
+@media (max-width: 500px) {
+    .aside_one{
+        grid-column:50%;   
+    }
+    
+    .aside_two{
+        grid-column:50%;   
+    }
+    
+    article{
+        grid-column:1 / 4;
+    }   
+}
